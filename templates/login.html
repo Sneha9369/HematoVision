@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="split-container">
+
+    <div class="split-left">
+        <img src="https://static.vecteezy.com/system/resources/previews/035/858/479/non_2x/test-tube-with-blood-sample-in-hand-of-doctor-isolated-general-blood-analysis-laboratory-container-with-red-liquid-medical-plastic-bag-research-medical-analysis-cartoon-flat-illustration-vector.jpg" style="width:90%;">
+    </div>
+
+    <div class="split-right">
+        <div class="card">
+            <h1>Login</h1>
+
+            <form action="/login" method="POST">
+                <input type="text" name="username" placeholder="Username" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <button type="submit">Login</button>
+            </form>
+
+            <br>
+            <a href="/register">Register</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

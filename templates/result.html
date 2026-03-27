@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card" style="width:80%">
+    <h1>Prediction Result</h1>
+
+    <img src="/static/uploads/{{ filename }}" style="max-width:350px;"><br><br>
+
+    <h2>Prediction: {{ prediction }}</h2>
+    <h3>Confidence: {{ confidence }}%</h3>
+
+    <p>Thank you {{ username }} 😊</p>
+
+    <img src="https://i.pinimg.com/1200x/c5/3b/a1/c53ba170963930a18d46e31fb962df21.jpg" width="130"><br><br>
+
+    <form action="/home">
+        <button type="submit">Predict Another</button>
+    </form>
+</div>
+
+{% endblock %}

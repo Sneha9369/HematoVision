@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card" style="width:85%; text-align:left; line-height:1.8">
+
+<h1 style="text-align:center;">About HematoVision</h1>
+
+<p>
+HematoVision is an Artificial Intelligence based web application developed to classify different types of blood cells using deep learning and image processing techniques. This system helps in identifying blood cell types automatically from microscopic blood smear images. It reduces manual work and helps in faster medical analysis.
+</p>
+
+<h2>Introduction</h2>
+<p>
+Blood is made up of different types of cells and each cell has a different structure and function. The main components of blood include Red Blood Cells (RBC), White Blood Cells (WBC), and Platelets. White Blood Cells are further divided into different types such as Neutrophils, Eosinophils, Basophils, Lymphocytes, and Monocytes. Each of these cells has a unique shape, size, and nucleus structure which helps doctors identify them under a microscope.
+</p>
+
+<h2>How Blood Cell Identification Works</h2>
+<p>
+Blood cell identification is usually done using a microscope. A blood smear is placed on a glass slide and stained using special dyes. These dyes highlight the nucleus and cytoplasm of the cells, making it easier to differentiate between different types of cells.
+</p>
+
+<p>
+Each white blood cell has unique characteristics:
+</p>
+
+<ul>
+<li><b>Neutrophil:</b> Multi-lobed nucleus and light purple granules.</li>
+<li><b>Eosinophil:</b> Bi-lobed nucleus and red/orange granules.</li>
+<li><b>Basophil:</b> Dark purple granules covering nucleus.</li>
+<li><b>Lymphocyte:</b> Large nucleus with very little cytoplasm.</li>
+<li><b>Monocyte:</b> Kidney-shaped nucleus and large cytoplasm.</li>
+</ul>
+
+<p>
+By analyzing these features, the type of blood cell can be determined.
+</p>
+
+<h2>Role of Artificial Intelligence</h2>
+<p>
+In this project, we use Convolutional Neural Networks (CNN), which is a deep learning algorithm used for image classification. The model is trained using thousands of blood cell images. The model learns patterns such as:
+</p>
+
+<ul>
+<li>Cell shape</li>
+<li>Nucleus shape</li>
+<li>Color of cytoplasm</li>
+<li>Texture</li>
+<li>Granules presence</li>
+</ul>
+
+<p>
+After training, the model can predict the blood cell type when a new image is uploaded.
+</p>
+
+<h2>Working of HematoVision System</h2>
+<p>
+The working of the HematoVision system is as follows:
+</p>
+
+<ol>
+<li>User logs into the system.</li>
+<li>User uploads a blood cell image.</li>
+<li>The image is preprocessed (resized, normalized).</li>
+<li>The image is passed into the trained CNN model.</li>
+<li>The model predicts the blood cell type.</li>
+<li>The system displays prediction and confidence score.</li>
+<li>The prediction is stored in history for admin.</li>
+</ol>
+
+<h2>Advantages of the System</h2>
+<ul>
+<li>Reduces manual work of doctors.</li>
+<li>Faster blood cell classification.</li>
+<li>Stores prediction history.</li>
+<li>User-friendly interface.</li>
+<li>Useful for medical labs and students.</li>
+</ul>
+
+<h2>Technologies Used</h2>
+<ul>
+<li>Python</li>
+<li>Flask</li>
+<li>TensorFlow / Keras</li>
+<li>HTML, CSS</li>
+<li>Deep Learning (CNN)</li>
+<li>Image Processing</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>
+HematoVision is an AI-powered system that helps in automatic blood cell classification using deep learning. It can assist doctors and medical students in analyzing blood samples more efficiently. This system demonstrates how artificial intelligence can be used in the healthcare sector to improve diagnosis speed and accuracy.
+</p>
+
+</div>
+
+{% endblock %}

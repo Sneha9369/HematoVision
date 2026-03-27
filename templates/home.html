@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card" style="width:80%">
+    <h1>Welcome {{ session['user'] }}</h1>
+
+    <h3 id="date"></h3>
+
+    <hr><br>
+
+    <h2>Blood Cell Classification</h2>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" onchange="previewImage(event)" required><br>
+
+        <img id="preview" width="220" style="margin-top:15px; border-radius:10px;"><br>
+
+        <button type="submit">Predict Blood Cell</button>
+    </form>
+
+    <br><br>
+
+    <div style="display:flex; justify-content:space-around;">
+        <div class="card" style="width:30%">
+            <h3>Total Predictions</h3>
+            <h2>{{ total }}</h2>
+        </div>
+
+        <div class="card" style="width:30%">
+            <h3>Model Accuracy</h3>
+            <h2>96%</h2>
+        </div>
+
+        <div class="card" style="width:30%">
+            <h3>Logged User</h3>
+            <h2>{{ session['user'] }}</h2>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function previewImage(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+        var output = document.getElementById('preview');
+        output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+// Date + Day
+var today = new Date();
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+document.getElementById("date").innerHTML = today.toLocaleDateString("en-US", options);
+</script>
+
+{% endblock %}

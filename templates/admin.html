@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 style="text-align:center;">Admin Panel</h2>
+
+<div class="card">
+    <h3>Login History</h3>
+    {% for item in login_data %}
+        <p>{{ item }}</p>
+    {% endfor %}
+</div>
+
+<br>
+
+<div class="card">
+    <h3>Register History</h3>
+    {% for item in register_data %}
+        <p>{{ item }}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

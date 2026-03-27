@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HematoVision</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #e0ecff, #f4f9ff);
+        }
+
+        .navbar {
+            background: #2c3e50;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 8px 18px;
+            border-radius: 20px;
+            background: #34495e;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .menu a:hover {
+            background: #1abc9c;
+        }
+
+        .welcome {
+            color: white;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 40px;
+            min-height: 70vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+            width: 60%;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* LOGIN REGISTER SPLIT */
+        .split-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .split-left {
+            width: 50%;
+            text-align: center;
+        }
+
+        .split-left img {
+            width: 80%;
+            max-height: 400px;
+        }
+
+        .split-right {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 80%;
+        }
+
+        button {
+            background: #1abc9c;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #16a085;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">🧬 HematoVision</div>
+
+        <div class="menu">
+            {% if session['user'] %}
+                <span class="welcome">Welcome {{ session['user'] }}</span>
+            {% endif %}
+            <a href="/home">Home</a>
+            <a href="/history">History</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div class="footer">
+        Developed by Sneha Singh | HematoVision Project
+    </div>
+
+</body>
+</html>
